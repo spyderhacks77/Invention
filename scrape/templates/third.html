@@ -1,0 +1,178 @@
+{% extends "parent.html" %}
+<!-- <!DOCTYPE HTML> -->
+{% load static %}
+<html>
+<head>
+	<title>VaccineSlotTracker-Invention</title>
+
+
+{% block main %}
+	<!-- popup section -->
+	<section class="contact-form">
+		<div class="container" id="container">
+		<!-- Form -->
+			<div class="row">
+				<div class="col-md-12">
+					{% if msg %}
+					<marquee scrollamount="10"><h2>{{msg}}</h2></marquee>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="contact-form">
+		<div class="container" id="container">
+		<!-- Form -->
+			<div class="row">
+				<div class="col-md-12">
+					<h1>COWIN VACCINE SLOT TRACKER</h1>
+					<form class="form-name-email" action="{% url 'cowin' %}" method="post">
+						{% csrf_token %}
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" class="form-control" name="cname" placeholder="Your Name *"/>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="email" class="form-control" name="cemail" placeholder="Email on which notification will be sent *" />
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="number" class="form-control" name="cage"placeholder="Age of the person to be vaccinated *" />
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="number" class="form-control" name="cpincode" id="pincode" placeholder="Pincode of district where slot needs to be tracked *"/>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="row">
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
+							    		<label class="radio-inline">
+										  	<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Low CPM
+										</label>
+									</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+							    		<label class="radio-inline">
+										  	<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Normal CPM
+										</label>
+						   			 </div>
+						   			 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-right">
+							    		<label class="radio-inline">
+										  	<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> High CPM
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="from-group">
+									<textarea class="form-control" rows="5" name="cmessage" placeholder="How you want us to approach you with notification when centres are available..."></textarea>
+								</div>
+								<input type="submit" class="btn btn-tobais btn-send" value="TRACK">
+								<input type="reset" class="btn btn-tobais btn-reset" value="RESET">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+		<!-- Testimonial section -->
+
+	<section class="testimonial">
+		<div class="container">
+			<div class="owl-carousel owl-theme" id="testimonial">
+			    <div class="carousel-item">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+					    	<div class="text-center">
+					    		<p>Cowin Vaccine tracker helps you by opening and again & again checking Cowin portal for empty slots. The tracker will keep tracking it for you 24*7 hours repeatedly and notify you when available.
+
+								</p>
+					    		<p>— Umair Nizam, Developer</p>
+					    	</div>
+					    </div>
+					</div>
+			    </div>
+			    <div class="carousel-item">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+					    	<div class="text-center">
+					    		<p>“ For, Amazon Product Tracking !!!
+									Visit to the Amazon product page and copy the URL .
+									Select the category of product. (Not Necessary).
+									Fill the atleast price of that product at which or below that you want to be notified.
+									Tell us your email address where notification will be sent as soon as product price drops.
+									In message section tell us how you want us to approach you with notification. ”
+								</p>
+					    		<p>— Umair Nizam, Developer</p>
+					    	</div>
+					    </div>
+					</div>
+			    </div>
+			    <div class="carousel-item">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+					    	<div class="text-center">
+					    		<p>“ For, Flipkart Product Tracking !!!
+									Visit to the Flipkart product page and copy the URL .
+									Select the category of product. (Not Necessary).
+									Fill the atleast price of that product at which or below that you want to be notified.
+									Tell us your email address where notification will be sent as soon as product price drops
+									In message section tell us how you want us to approach you with notification. ”
+								</p>
+					    		<p>— Umair Nizam, Developer</p>
+					    	</div>
+					    </div>
+					</div>
+			    </div>
+			</div>
+		</div>
+	</section>
+
+	<section class="contact-form">
+		<div class="container" id="container">
+		<!-- Form -->
+			<div class="row">
+				<div class="col-md-12">
+					<h2>What Is CPM ?</h2>
+						<div class="row">
+
+								<h3>High CPM </h3>
+								CPM stands for Captures Per Minutes ,It basically determines the script to track price of the product per <b>second</b>.
+						</div>
+						<div class="row">
+
+								<h3>Normal CPM </h3>
+								CPM stands for Captures Per Minutes ,It basically determines the script to track price of the product per <b>hour</b>.
+						</div><div class="row">
+
+								<h3>Low CPM </h3>
+								CPM stands for Captures Per Minutes ,It basically determines the script to track price of the product per <b>day</b>.
+						</div>
+
+
+
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock main %}

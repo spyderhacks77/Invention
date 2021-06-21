@@ -1,0 +1,266 @@
+
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<title>Registration - Invention</title>
+
+    <meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/font-awesome/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.cs' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/ionicons-2.0.1/css/ionicons.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/main.css' %}">
+	</head>
+
+	<body>
+	<section class="head">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<header class="header">
+						<div class="inner">
+							<a href="#menu" class="nav-bars">
+								<img src="{% static 'assets/images/nav-icon.png' %}" class="img-responsive" alt="Collapsable Navbar">
+							</a>
+							<a href="{% url 'index' %}" class="logo">
+								INVENTI<span><img src="{% static 'assets/images/logo.png' %}"></span>N
+							</a>
+						</div>
+					</header>
+
+					<!-- Menu -->
+
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="{% url 'index' %}">Home</a></li>
+							<li><a href="{% url 'script' %}">Scripts</a></li>
+							<li><a href="{% url 'first' %}">Amazon-Price-Tracker</a></li>
+							<li><a href="{% url 'second' %}">Flipkart-Price-Tracker</a></li>
+							<li><a href="{% url 'third' %}">Cowin-Vaccine-Slot-Tracker</a></li>
+							<li><a href="{% url 'nigga' %}">Registration</a></li>
+							<li><a href="{% url 'privacypolicy' %}">Privacy Policy</a></li>
+							<li><a href="{% url 'termsofservice' %}">Terms Of Service</a></li>
+							<li><a href="{% url 'aboutus' %}">About Us</a></li>
+							<li><a href="{% url 'contactus' %}">Contact Us</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+		<section id="innerheader2" class="innerheader innerheader2">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row pad-small">
+					<div class="col-sm-12">
+						<div class="inner-title">
+							<h3>Do Register Yourself To Stay In Loop!!!</h3>
+							<p>PLEASE BE GENTLE & RESPECTFUL TOWARDS DEVELOPERS TO GAIN FRUITFUL REWARDS.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+	<section class="contact-form">
+		<div class="container" id="container">
+		<!-- Form -->
+			<div class="row">
+				<div class="col-md-12">
+					<h2><marquee>Notification</marquee></h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="contact-form">
+		<div class="container" id="container">
+		<!-- Form -->
+			<div class="row">
+				<div class="col-md-12">
+					{% if msg %}
+					<marquee scrollamount="10"><h2>{{msg}}</h2></marquee>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+<section class="contact-form">
+			<div class="container">
+			<!-- Form -->
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Contact Us</h1>
+						<form class="form-name-email" action="{% url 'register' %}" method="post">
+							{% csrf_token %}
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control" name="rname" placeholder="Name *"/>
+									</div>
+								</div>
+							</div>
+                            <div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="number" class="form-control" name="rage" placeholder="Age *"/>
+									</div>
+								</div>
+                                <div class="col-md-6">
+									<div class="form-group">
+										<input type="number" class="form-control" name="rcontact" placeholder="Contact *"/>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="email" class="form-control" name="remail" placeholder="Enter Your Email For OTP Verification *" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+
+										<select class="form-control">
+											<option selected="selected">Select Your Occupation *</option>
+											<option>Software Developer</option>
+											<option>School / College Student</option>
+											<option>IT / CS Sector Corporation</option>
+											<option>Cybersecurity / IT Consultant</option>
+											<option>Others.</option>
+										</select>
+
+								</div>
+							</div>
+                            <div class="row">
+								<div class="col-md-12">
+									<div class="from-group">
+										<textarea class="form-control" rows="3" name="raddress" placeholder="Please Enter Your Address !!!"></textarea>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<input type="submit" class="btn btn-tobais btn-send" value="SEND OTP">
+								<input type="reset" class="btn btn-tobais btn-reset" value="RESET">
+
+
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+	<section class="social-section">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="social-contact">
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-4">
+								<p class="logo">INVENTI<span><a href="#header_slide"><img src="{% static 'assets/images/logo.png' %}"></span></a>N</p>
+							</div>
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-4">
+										<p>SERVICES</p>
+										<p><a href="{% url 'third' %}">Cowin-Vaccine-Slot-Tracker</a></p>
+										<p><a href="{% url 'first' %}">Amazon-Price-Tracker</a></p>
+										<p><a href="{% url 'second' %}">Flipkart-Price-Tracker</a></p>
+									</div>
+									<div class="col-md-4">
+										<p>USEFULL LINKS</p>
+										<p><a href="{% url 'script' %}">How To Use*</a></p>
+										<p><a href="{% url 'script' %}">Script Funtioning :)</a></p>
+										<p><a href="{% url 'contactus' %}">Need Help ?</a></p>
+										<p><a href="{% url 'contactus' %}">Register Query :(</a></p>
+										<p><a href="{% url 'contactus' %}">Make Request !</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-6">
+							<h3>KEEP ME UPDATED ABOUT NEW TOOLS!!!</h3>
+								<div class="input-group">
+							      	<input type="text" class="form-control notify-me" placeholder="">
+							      	<span class="input-group-btn">
+							        	<a class="btn btn-default notify-me" type="button"><b><h8>NOTIFY ME</h8></b></a>
+							     	</span>
+							    </div>
+							</div>
+							<div class="col-md-6">
+								<div class="row">
+									<ul class="social-icon">
+										<li>
+											<a href="https://www.facebook.com/people/Invention-Helpdesk/100069787142999/" class="ion-social-facebook-outline"></a>
+										</li>
+										<li>
+											<a href="https://twitter.com/INVENTIONheIp" class="ion-social-twitter-outline"></a>
+										</li>
+										<li>
+											<a href="https://dribbble.com/INVENTION/about" class="ion-social-dribbble-outline"></a>
+										</li>
+										<li>
+											<a href="https://www.pinterest.com/inventionhelpdesk/" class="ion-social-pinterest-outline"></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<hr>
+
+	<section class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<ul class="footer-bottom">
+						<li><a href="https://templeoflearningacademy.wordpress.com">Free Courses Site</a></li>
+						<li><a href="https://spydershacks.square.site">Cybersecurity Courses Site</a></li>
+						<li>
+							<a href="#">
+								<img src="{% static 'assets/images/add.png' %}">AdCholces
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-6">
+					<p class="copyright-text">Invention &copy; 2021
+						<a href="{% url 'aboutus' %}" target="_blank"><b>Umair Nizam</b></a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<script src="{% static 'assets/js/jquery-3.1.0.min.js' %}"></script>
+	<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/script.js' %}"></script>
+
+</body>
+</html>
