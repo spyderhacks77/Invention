@@ -1,1 +1,1 @@
-web: gunicorn INVENTION.wsgi --log-file -
+web:gunicorn INVENTION.wsgi --log-file -
