@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import django_heroku
 from pathlib import Path
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,8 +27,12 @@ SECRET_KEY = 'oh$yopom41v512z3%5*ud-seat%^g8q3-68yu#w=98r5jk^fxd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = []
 
+=======
+ALLOWED_HOSTS = ['inventionbike.herokuapp.com/']
+>>>>>>> e957c210bb0d22a81ec73947c7fb767da90c864d
 
 # Application definition
 
@@ -72,7 +78,11 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 
 # Database
+<<<<<<< HEAD
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+=======
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+>>>>>>> e957c210bb0d22a81ec73947c7fb767da90c864d
 
 DATABASES = {
     'default': {
@@ -118,4 +128,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+
 STATIC_URL = '/static/'
+<<<<<<< HEAD
+=======
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())
+
+>>>>>>> e957c210bb0d22a81ec73947c7fb767da90c864d
