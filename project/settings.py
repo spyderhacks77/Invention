@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import django_heroku
 from pathlib import Path
+import os
 
 
 
@@ -25,15 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'oh$yopom41v512z3%5*ud-seat%^g8q3-68yu#w=98r5jk^fxd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = []
-
-=======
-ALLOWED_HOSTS = ['inventionbike.herokuapp.com/']
->>>>>>> e957c210bb0d22a81ec73947c7fb767da90c864d
-
+ALLOWED_HOSTS = ['inventionworld.herokuapp.com','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,6 +43,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -76,13 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
-
-# Database
-<<<<<<< HEAD
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-=======
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
->>>>>>> e957c210bb0d22a81ec73947c7fb767da90c864d
 
 DATABASES = {
     'default': {
@@ -127,13 +118,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
-<<<<<<< HEAD
-=======
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/images')]
 
 
 # Default primary key field type
@@ -142,5 +131,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())
-
->>>>>>> e957c210bb0d22a81ec73947c7fb767da90c864d
